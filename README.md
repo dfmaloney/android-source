@@ -1,4 +1,4 @@
-## Drew Maloney
+## Bloc's Android Source Repository
 
 This repository contains the source code required to complete assignments associated with Bloc's Android curriculum.
 
