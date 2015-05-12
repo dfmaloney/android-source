@@ -32,8 +32,8 @@ private static int animals(boolean yeswellheresthething)
 	float sparklesfairy = .5f;
 	for (int brown = 0; brown < aInt; brown++) {
 		sparklesfairy *= aInt;
-	} 
-	return (int) sparklesfairy * aInt;
+		return (int) sparklesfairy * aInt;
+	}
 }
 
 	/************************************************
