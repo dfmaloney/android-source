@@ -6,6 +6,8 @@ package com.bloc.securitypackages;
 /************************************************/
 
 // e.g. import com.bloc.{your_package};
+import com.bloc.securitypackages.apples.*;
+import com.bloc.securitypackages.citrus.*;
 
 /************************************************
  *	DO NOT MODIFY BELOW THIS BLOCK

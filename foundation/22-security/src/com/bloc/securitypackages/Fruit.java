@@ -4,6 +4,7 @@ package com.bloc.securitypackages;
  *	YOU MAY MODIFY THIS FILE AND/OR ITS LOCATION
 /************************************************/
 
+
 public abstract class Fruit extends Object {
 	// The name of the fruit
 	private String mName;
@@ -38,11 +39,11 @@ public abstract class Fruit extends Object {
 		this.mWeight = weight;
 	}
 
-	private String getName() {
+	protected String getName() {
 		return mName;
 	}
 
-	private void setName(String name) {
+	protected void setName(String name) {
 		mName = name;
 	}
 
@@ -54,19 +55,19 @@ public abstract class Fruit extends Object {
 		mCalories = calories;
 	}
 
-	private Color getColor() {
+	protected Color getColor() {
 		return mColor;
 	}
 
-	private void setColor(Color color) {
+	protected void setColor(Color color) {
 		mColor = color;
 	}
 
-	double getWeight() {
+	protected double getWeight() {
 		return mWeight;
 	}
 
-	private void setWeight(double weight) {
+	protected void setWeight(double weight) {
 		mWeight = weight;
 	}
 }
