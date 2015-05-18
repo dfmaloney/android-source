@@ -19,6 +19,12 @@ class Ensemble extends Object {
 	 *	Create the first Ensemble constructor
 	/************************************************/
 
+	Ensemble(Artist... artists){
+		mArtists = artists;
+		if (artists[0] != null)
+			mName = artists[0].mFirstName + " " + artists[0].mLastName;
+	}
+
 	/*
 	 * Ensemble
 	 *
@@ -34,4 +40,11 @@ class Ensemble extends Object {
 	 *	ASSIGNMENT:
 	 *	Create the second Ensemble constructor
 	/************************************************/
+
+	Ensemble(String name, Artist... artists){
+		if (name == null)
+			mName = mArtists[0].mFirstName +  " " + mArtists[0].mLastName;
+		else
+			mName = name;
+	}
 }
