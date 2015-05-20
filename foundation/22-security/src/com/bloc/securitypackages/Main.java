@@ -8,6 +8,7 @@ package com.bloc.securitypackages;
 // e.g. import com.bloc.{your_package};
 import com.bloc.securitypackages.apples.*;
 import com.bloc.securitypackages.citrus.*;
+import com.bloc.securitypackages.colors.*;
 
 /************************************************
  *	DO NOT MODIFY BELOW THIS BLOCK
@@ -27,7 +28,7 @@ public class Main extends Object {
 		colors[1] = fruits[1].getColor();
 		colors[2] = fruits[2].getColor();
 		colors[3] = fruits[3].getColor();
-		colors[4] = new Orange();
+		colors[4] = new OrangeColor();
 
 		
 		System.out.println("/************************/");

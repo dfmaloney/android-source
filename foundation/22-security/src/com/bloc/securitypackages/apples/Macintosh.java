@@ -4,6 +4,8 @@ package com.bloc.securitypackages.apples;
  *	YOU MAY MODIFY THIS FILE AND/OR ITS LOCATION
 /************************************************/
 
+import com.bloc.securitypackages.colors.*;
+
 public class Macintosh extends Apple {
 
 	public Macintosh() {
