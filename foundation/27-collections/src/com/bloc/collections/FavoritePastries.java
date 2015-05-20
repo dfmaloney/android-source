@@ -24,12 +24,14 @@ public class FavoritePastries {
 	 *	Use a HashMap to store the relationship
 	 *	between rating and pastry: HashMap<Integer, List<Pastry>>
 	/************************************************/
-
-
+	// value as key makes no sense here
+	HashMap<List<Pastry>, Integer> map;
+	List<Pastry> treats;
 	public FavoritePastries() {
 		/************************************************
  	 	 *	WORK HERE
 		/************************************************/
+		map = new HashMap<treats, Integer>();
 	}
 
 	/* 
@@ -51,6 +53,11 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE
 		/************************************************/
+		if (treats.contains(pastry))
+			map.replace(pastry, rating);
+		else
+			map.put(treats.add(pastry), Integer);
+		//treats.contains(pastry) ? map.replace(pastry, rating) : map.put(rating, treats.add(pastry));
 	}
 
 	/* 
@@ -69,7 +76,12 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
-		return false;
+		if (treats.contains(pastry)){
+			map.remove(pastry);
+			return true;
+		}
+		else
+			return false;
 	}
 
 	/* 
@@ -90,7 +102,7 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
-		return -1;
+		return map.get(pastry);
 	}
 
 	/* 
