@@ -13,6 +13,7 @@ public abstract class Appliance extends Object {
 	String mBrandName;
 	String mSerialNumber;
 	boolean mIsOn;
+	static PowerSupply sPowerSupply;
 
 	/*
 	 * performFunction
@@ -50,7 +51,7 @@ public abstract class Appliance extends Object {
 	 * 		   is plugged in
 	 */
 	public boolean isOn() {
-		return mPowerSupply == null ? false : PowerSupply.hasAppliance(this) && mIsOn;
+		return sPowerSupply == null ? false : sPowerSupply.hasAppliance(this) && mIsOn;
 	}
 
 	/*
@@ -58,8 +59,8 @@ public abstract class Appliance extends Object {
 	 * Plug the appliance into the power supply
 	 */
 	public void plugIn() {
-		if (!PowerSupply.hasAppliance(this)) {
-			PowerSupply.plugAppliance(this);
+		if (!sPowerSupply.hasAppliance(this)) {
+			sPowerSupply.plugAppliance(this);
 		}
 	}
 
@@ -68,6 +69,6 @@ public abstract class Appliance extends Object {
 	 * Remove this appliance from the power supplys
 	 */
 	public void unplug() {
-		mPowerSupply.unplugAppliance(this);
+		sPowerSupply.unplugAppliance(this);
 	}
 }
