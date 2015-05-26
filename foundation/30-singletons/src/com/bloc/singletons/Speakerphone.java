@@ -7,6 +7,7 @@ package com.bloc.singletons;
  *	This is a singleton class which maintains communication
  *	between Talker and Listener interface objects.
 /************************************************/
+import java.util.*;
 
 public class Speakerphone extends Object {
 	/*
@@ -18,7 +19,15 @@ public class Speakerphone extends Object {
 	 *	ASSIGNMENT:
 	 *	Implement the get method
 	/************************************************/
-
+	private static Speakerphone sSpeakerPhone;
+	private static List<Listener> audience;
+	public static Speakerphone get(){
+		if (sSpeakerPhone == null){
+			sSpeakerPhone = new Speakerphone();
+			audience = new ArrayList<Listener>();
+		}
+		return sSpeakerPhone;
+	}
 	/*
 	 * addListener
 	 *
@@ -31,7 +40,9 @@ public class Speakerphone extends Object {
 	 *	ASSIGNMENT:
 	 *	Implement the addListener method
 	/************************************************/
-
+	void addListener(Listener ears){
+		audience.add(ears);
+	}
 	/*
 	 * removeListener
 	 *
@@ -44,7 +55,9 @@ public class Speakerphone extends Object {
 	 *	ASSIGNMENT:
 	 *	Implement the removeListener method
 	/************************************************/
-
+	void removeListener(Listener ears){
+		audience.remove(ears);
+	}
 	/*
 	 * removeAll
 	 *
@@ -56,7 +69,9 @@ public class Speakerphone extends Object {
 	 *	ASSIGNMENT:
 	 *	Implement the removeAll method
 	/************************************************/
-
+	void removeAll(){
+		audience.clear();
+	}
 	/*
 	 * contains
 	 *
@@ -71,7 +86,9 @@ public class Speakerphone extends Object {
 	 *	ASSIGNMENT:
 	 *	Implement the contains method
 	/************************************************/	
-
+	boolean contains(Listener ears){
+		return audience.contains(ears);
+	}
 	/*
 	 * shoutMessage
 	 *
@@ -84,7 +101,10 @@ public class Speakerphone extends Object {
 	 *	ASSIGNMENT:
 	 *	Implement the shoutMessage method
 	/************************************************/
-
+	void shoutMessage(Talker mouth){
+		for (Listener a : audience)
+			a.onMessageReceived(mouth.getMessage());
+	}
 	/*
 	 * shoutMessage
 	 *
@@ -103,5 +123,12 @@ public class Speakerphone extends Object {
 	 *	ASSIGNMENT:
 	 *	Implement the shoutMessage method
 	/************************************************/
+	void shoutMessage(Talker mouth, Class receiver){
+		for(Listener a : audience){
+			if (a.isAssignableFrom(receiver)){
+				a.onMessageReceived(mouth.getMessage());
+			}
+		}
+	}
 
 }
