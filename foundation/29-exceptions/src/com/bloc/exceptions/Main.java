@@ -14,8 +14,14 @@ import java.util.Random;
 public class Main extends Object {
 
 	public static void main(String [] args) {
-		tryGetMax();
-		tryRemove();
+		try{
+			tryGetMax();
+			tryRemove();
+		}
+		catch(IllegalArgumentException e){
+		}
+		finally{
+		}
 
 		System.out.println("/************************/");
 		System.out.println("/*                      */");
