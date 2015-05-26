@@ -125,7 +125,7 @@ public class Speakerphone extends Object {
 	/************************************************/
 	void shoutMessage(Talker mouth, Class receiver){
 		for(Listener a : audience){
-			if (a.isAssignableFrom(receiver)){
+			if (a.getClass().isAssignableFrom(receiver)){
 				a.onMessageReceived(mouth.getMessage());
 			}
 		}
