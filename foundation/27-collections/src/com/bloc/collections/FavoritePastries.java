@@ -24,14 +24,29 @@ public class FavoritePastries {
 	 *	Use a HashMap to store the relationship
 	 *	between rating and pastry: HashMap<Integer, List<Pastry>>
 	/************************************************/
-	// value as key makes no sense here
-	HashMap<List<Pastry>, Integer> map;
-	List<Pastry> treats;
+	
+	HashMap<Integer, List<Pastry>> map;
+	List<Pastry> mOneStarTreats;
+	List<Pastry> mTwoStarTreats;
+	List<Pastry> mThreeStarTreats;
+	List<Pastry> mFourStarTreats;
+	List<Pastry> mFiveStarTreats;
+
 	public FavoritePastries() {
 		/************************************************
  	 	 *	WORK HERE
 		/************************************************/
-		map = new HashMap<treats, Integer>();
+		map = new HashMap<Integer, List<Pastry>>();
+		mOneStarTreats = new ArrayList<Pastry>();
+		mTwoStarTreats = new ArrayList<Pastry>();
+		mThreeStarTreats = new ArrayList<Pastry>();
+		mFourStarTreats = new ArrayList<Pastry>();
+		mFiveStarTreats = new ArrayList<Pastry>();
+		map.put(1, mOneStarTreats);
+		map.put(2, mTwoStarTreats);
+		map.put(3, mThreeStarTreats);
+		map.put(4, mFourStarTreats);
+		map.put(5, mFiveStarTreats);
 	}
 
 	/* 
@@ -53,11 +68,136 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE
 		/************************************************/
-		if (treats.contains(pastry))
-			map.replace(pastry, rating);
-		else
-			map.put(treats.add(pastry), Integer);
-		//treats.contains(pastry) ? map.replace(pastry, rating) : map.put(rating, treats.add(pastry));
+		if (rating == 1) {
+			//check if elsewhere
+			if (mOneStarTreats.contains(pastry)){
+				mOneStarTreats.remove(pastry);
+				mOneStarTreats.add(pastry);
+			}
+			else if (mTwoStarTreats.contains(pastry)){
+				mTwoStarTreats.remove(pastry);
+				mOneStarTreats.add(pastry);
+			}
+			else if (mThreeStarTreats.contains(pastry)){
+				mThreeStarTreats.remove(pastry);
+				mOneStarTreats.add(pastry);
+			}	
+			else if (mFourStarTreats.contains(pastry)){
+				mFourStarTreats.remove(pastry);
+				mOneStarTreats.add(pastry);
+			}	
+			else if (mFiveStarTreats.contains(pastry)){
+				mFiveStarTreats.remove(pastry);
+				mOneStarTreats.add(pastry);
+			}		
+			else{
+				mOneStarTreats.add(pastry);
+			}	
+		}
+		if (rating == 2) {
+			//check if elsewhere
+			if (mOneStarTreats.contains(pastry)){
+				mOneStarTreats.remove(pastry);
+				mTwoStarTreats.add(pastry);
+			}
+			else if (mTwoStarTreats.contains(pastry)){
+				mTwoStarTreats.remove(pastry);
+				mTwoStarTreats.add(pastry);
+			}
+			else if (mThreeStarTreats.contains(pastry)){
+				mThreeStarTreats.remove(pastry);
+				mTwoStarTreats.add(pastry);
+			}	
+			else if (mFourStarTreats.contains(pastry)){
+				mFourStarTreats.remove(pastry);
+				mTwoStarTreats.add(pastry);
+			}	
+			else if (mFiveStarTreats.contains(pastry)){
+				mFiveStarTreats.remove(pastry);
+				mTwoStarTreats.add(pastry);
+			}		
+			else{
+				mTwoStarTreats.add(pastry);
+			}	
+		}
+		if (rating == 3) {
+			//check if elsewhere
+			if (mOneStarTreats.contains(pastry)){
+				mOneStarTreats.remove(pastry);
+				mThreeStarTreats.add(pastry);
+			}
+			else if (mTwoStarTreats.contains(pastry)){
+				mTwoStarTreats.remove(pastry);
+				mThreeStarTreats.add(pastry);
+			}
+			else if (mThreeStarTreats.contains(pastry)){
+				mThreeStarTreats.remove(pastry);
+				mThreeStarTreats.add(pastry);
+			}	
+			else if (mFourStarTreats.contains(pastry)){
+				mFourStarTreats.remove(pastry);
+				mThreeStarTreats.add(pastry);
+			}	
+			else if (mFiveStarTreats.contains(pastry)){
+				mFiveStarTreats.remove(pastry);
+				mThreeStarTreats.add(pastry);
+			}		
+			else{
+				mThreeStarTreats.add(pastry);
+			}	
+		}
+		if (rating == 4) {
+			//check if elsewhere
+			if (mOneStarTreats.contains(pastry)){
+				mOneStarTreats.remove(pastry);
+				mFourStarTreats.add(pastry);
+			}
+			else if (mTwoStarTreats.contains(pastry)){
+				mTwoStarTreats.remove(pastry);
+				mFourStarTreats.add(pastry);
+			}
+			else if (mThreeStarTreats.contains(pastry)){
+				mThreeStarTreats.remove(pastry);
+				mFourStarTreats.add(pastry);
+			}	
+			else if (mFourStarTreats.contains(pastry)){
+				mFourStarTreats.remove(pastry);
+				mFourStarTreats.add(pastry);
+			}	
+			else if (mFiveStarTreats.contains(pastry)){
+				mFiveStarTreats.remove(pastry);
+				mFourStarTreats.add(pastry);
+			}		
+			else{
+				mFourStarTreats.add(pastry);
+			}	
+		}
+		if (rating == 5) {
+			//check if elsewhere
+			if (mOneStarTreats.contains(pastry)){
+				mOneStarTreats.remove(pastry);
+				mFiveStarTreats.add(pastry);
+			}
+			else if (mTwoStarTreats.contains(pastry)){
+				mTwoStarTreats.remove(pastry);
+				mFiveStarTreats.add(pastry);
+			}
+			else if (mThreeStarTreats.contains(pastry)){
+				mThreeStarTreats.remove(pastry);
+				mFiveStarTreats.add(pastry);
+			}	
+			else if (mFourStarTreats.contains(pastry)){
+				mFourStarTreats.remove(pastry);
+				mFiveStarTreats.add(pastry);
+			}	
+			else if (mFiveStarTreats.contains(pastry)){
+				mFiveStarTreats.remove(pastry);
+				mFiveStarTreats.add(pastry);
+			}		
+			else{
+				mFiveStarTreats.add(pastry);
+			}	
+		}
 	}
 
 	/* 
@@ -76,8 +216,24 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
-		if (treats.contains(pastry)){
-			map.remove(pastry);
+		if (mOneStarTreats.contains(pastry)){
+			mOneStarTreats.remove(pastry);
+			return true;
+		}
+		else if (mTwoStarTreats.contains(pastry)){
+			mTwoStarTreats.remove(pastry);
+			return true;
+		}
+		else if (mThreeStarTreats.contains(pastry)){
+			mThreeStarTreats.remove(pastry);
+			return true;
+		}
+		else if (mFourStarTreats.contains(pastry)){
+			mFourStarTreats.remove(pastry);
+			return true;
+		}
+		else if (mFiveStarTreats.contains(pastry)){
+			mFiveStarTreats.remove(pastry);
 			return true;
 		}
 		else
@@ -102,7 +258,23 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
-		return map.get(pastry);
+		int tempRating = -1;
+		if (mOneStarTreats.contains(pastry)){
+			tempRating = 1;
+		}
+		else if (mTwoStarTreats.contains(pastry)){
+			tempRating = 2;
+		}
+		else if (mThreeStarTreats.contains(pastry)){
+			tempRating = 3;
+		}
+		else if (mFourStarTreats.contains(pastry)){
+			tempRating = 4;
+		}
+		else if (mFiveStarTreats.contains(pastry)){
+			tempRating = 5;
+		}
+		return tempRating;
 	}
 
 	/* 
@@ -125,7 +297,23 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
-		return null;
+		List<Pastry> working = new ArrayList<Pastry>();
+		if (rating == 1){
+			return mOneStarTreats;
+		}
+		else if (rating == 2){
+			return mTwoStarTreats;
+		}
+		else if (rating == 3){
+			return mThreeStarTreats;
+		}
+		else if (rating == 4){
+			return mFourStarTreats;
+		}
+		else if (rating == 5){
+			return mFiveStarTreats;
+		}
+		else return working;
 	}
 
 }
